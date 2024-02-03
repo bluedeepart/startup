@@ -1,0 +1,193 @@
+:root {
+  --primary: #4c39f0;
+  --secondary: #f5602d;
+  --primary_light: #3524c4;
+  --primary_dark: #040025;
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #f4f4fb;
+  --label_color: #454545;
+  --border_color: #d4d5d9;
+  --dark_gray: #262626;
+  --light_gray: #404040;
+  --blue_gray: #f6f5ff;
+
+  --light_purple: #eee9ff;
+  --light_pink: #ffe9fc;
+  --light_orange: #ffe8d8;
+  --light_blue: #d8f3ff;
+  --light_red: #ffe9e9;
+  --light_green: #f3ffd8;
+
+  --ff-serif: "Inter", "sans-serif";
+
+  --gutter: 1.25rem;
+}
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$primary_light: var(--primary_light);
+$primary_dark: var(--primary_dark);
+$black: var(--black);
+$white: var(--white);
+$gray: var(--gray);
+$label_color: var(--label_color);
+$border_color: var(--border_color);
+$dark_gray: var(--dark_gray);
+$light_gray: var(--light_gray);
+$blue_gray: var(--blue_gray);
+
+$light_purple: var(--light_purple);
+$light_pink: var(--light_pink);
+$light_orange: var(--light_orange);
+$light_blue: var(--light_blue);
+$light_red: var(--light_red);
+$light_green: var(--light_green);
+
+$ff-serif: var(--ff-serif);
+
+$gutter: var(--gutter);
+
+// Breakpoints
+$base_size: 1rem;
+// $xxl: 90rem;
+$xl: 75rem;
+$lg: 62rem;
+$md: 48rem;
+$sm: 36rem;
+
+@mixin min_media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max_media($width) {
+  @media only screen and (max-width: ($width - 1)) {
+    @content;
+  }
+}
+
+// flex
+%flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@include min_media($lg) {
+  %min-lg-flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  %min-lg-flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include max_media($lg) {
+  %max-lg-flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  %max-lg-flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ff-serif;
+  font-weight: 400;
+  color: $dark_gray;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+
+  @include min_media($lg) {
+    line-height: 4.125rem;
+    font-size: 3rem;
+  }
+}
+
+h2,
+h3 {
+  font-size: 32px;
+  line-height: 39px;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 500;
+  line-height: 38.73px;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21.78px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    color: $primary_light;
+  }
+}
+
+h2,
+h3,
+p,
+ul {
+  &:not(:only-child, :last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

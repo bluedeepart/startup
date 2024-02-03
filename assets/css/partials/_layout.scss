@@ -1,0 +1,661 @@
+/* HEADER */
+%headerMenu {
+  @include min_media($lg) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @include min_media($lg) {
+    gap: 3rem;
+  }
+
+  @include max_media($lg) {
+    @extend %max-lg-flex-center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+
+.header {
+  // z-index: 2;
+  background-color: $white;
+  padding: 1rem 0;
+
+  // @include min_media($lg) {
+  //   position: sticky;
+  //   top: 0;
+  // }
+
+  %menu {
+    width: 24px;
+    height: 2px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    background-color: $primary_light;
+  }
+
+  .btn-menu {
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    @extend %flex-center;
+
+    span {
+      font-size: 0;
+      position: relative;
+      @extend %menu;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        @extend %menu;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+      }
+    }
+
+    @include min_media($lg) {
+      display: none;
+    }
+  }
+
+  &_nav {
+    @extend %headerMenu;
+    ul {
+      @extend %headerMenu;
+      list-style: none;
+      margin-bottom: 0;
+      li {
+        a {
+          color: inherit;
+
+          &:hover {
+            color: $primary_light;
+          }
+        }
+      }
+    }
+    @include max_media($lg) {
+      position: fixed;
+      background-color: #fff;
+      top: 82px;
+      left: -100%;
+      width: 100%;
+      height: calc(100% - 82px);
+      z-index: 3;
+      padding: 0 3rem 3rem;
+      font-size: 1.5rem;
+      transition: left 0.3s ease-in-out;
+    }
+  }
+
+  &-open {
+    .header {
+      &_nav {
+        left: 0;
+      }
+
+      .btn-menu {
+        spna {
+          transform: rotate(-45deg);
+          &::before {
+            top: 0;
+          }
+          &::after {
+            transform: rotate(90deg);
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    @extend %flex-between;
+    flex: 1 1 auto;
+  }
+}
+
+/* BODY */
+$bannerSpaces: (
+  $sm: $base_size * 3,
+  $md: $base_size * 4,
+  $lg: $base_size * 6,
+  $xl: $base_size * 8,
+  // $xxl: $base_size * 6
+);
+
+section {
+  padding: 2.5rem 0;
+
+  @each $space, $space-value in $bannerSpaces {
+    @include min_media($space) {
+      padding: $space-value 0;
+    }
+  }
+
+  .wrapper {
+    @include min_media($lg) {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+
+      & > div {
+        flex: 1;
+      }
+    }
+  }
+}
+
+/* BANNER */
+.banner {
+  position: relative;
+
+  @include min_media($lg) {
+    &_content {
+      max-width: 30rem;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+
+    &::before {
+      left: 42%;
+      top: 70%;
+      width: 132px;
+      height: 38px;
+      background-image: url("/assets/images/ornament-19.png");
+    }
+
+    &::after {
+      left: 67%;
+      top: 87%;
+      width: 182px;
+      height: 62px;
+      background-image: url("/assets/images/ornament-21.png");
+      background-size: contain;
+    }
+  }
+
+  &_content {
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+      span {
+        color: $primary;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          position: absolute;
+        }
+
+        &::after {
+          width: 100%;
+          height: 4px;
+          background-color: $primary;
+          bottom: 0;
+          left: 0;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  &_image {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* ABOUT US */
+.about_us {
+  background-color: $blue_gray;
+  position: relative;
+
+  @include min_media($lg) {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      height: 100%;
+      width: 110%;
+      background-color: var(--blue_gray);
+      top: -28%;
+      transform: rotate(175deg);
+      z-index: -1;
+    }
+
+    &::after {
+      background-image: url("/assets/images/ornament-18.png");
+      left: 44%;
+      top: 34%;
+      width: 133px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .wrapper {
+    @include max_media($lg) {
+      display: flex;
+      flex-direction: column;
+
+      .img-thumb {
+        order: 2;
+      }
+    }
+    .about_us {
+      &_content {
+        @include min_media($lg) {
+          padding-left: 8rem;
+        }
+
+        @include max_media($lg) {
+          order: 1;
+          margin-top: 0;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  .img-thumb {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      bottom: -1rem;
+      right: -1rem;
+      background-color: $primary;
+      border-radius: 1rem;
+      z-index: 0;
+    }
+  }
+}
+
+/* MISSION */
+.mission {
+  position: relative;
+  padding-bottom: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("/assets/images/ornament-22.png");
+    left: 13%;
+    top: 50%;
+    width: 160px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    .wrapper {
+      .img-thumb {
+        margin-bottom: 5rem;
+
+        @include min_media($lg) {
+          margin-bottom: 0;
+        }
+
+        &::after {
+          bottom: auto;
+          width: 93px;
+          height: 93px;
+          top: -1rem;
+          right: -1rem;
+        }
+      }
+    }
+  }
+}
+
+/* EXPERTISE */
+.expertise {
+  padding-bottom: 0;
+
+  &_header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .card {
+      padding: 1.5rem;
+      background-color: $white;
+      box-shadow: 0 3px 30px rgb(9 9 12/ 10%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+
+      img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+/* SERVICES */
+$cardColors: (
+  1: $light_purple,
+  2: $light_pink,
+  3: $light_orange,
+  4: $light_blue,
+  5: $light_red,
+  6: $light_green
+);
+
+.services {
+  position: relative;
+  @include min_media($lg) {
+    &::before {
+      content: "";
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      width: 132px;
+      height: 38px;
+      z-index: -1;
+      opacity: 0.5;
+      background-image: url("/assets/images/ornament-20.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .container {
+    position: relative;
+    @include min_media($lg) {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 2;
+      }
+
+      &::before {
+        right: 0;
+        top: 25%;
+        width: 132px;
+        height: 38px;
+        background-image: url("/assets/images/ornament-20.png");
+      }
+
+      &::after {
+        right: -10%;
+        bottom: -3%;
+        width: 182px;
+        height: 72px;
+        background-image: url("/assets/images/ornament-24.png");
+        background-size: contain;
+      }
+    }
+  }
+
+  &_header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  @include min_media($lg) {
+    &_content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &_card {
+    flex-basis: 50%;
+    padding: 2rem 1rem;
+
+    @include min_media($lg) {
+      flex-basis: 33.33%;
+    }
+
+    @include min_media($lg) {
+      padding: 5rem 1rem 2rem;
+    }
+
+    &_icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      padding: 0.25rem;
+      margin-bottom: 2rem;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+      }
+
+      img {
+        position: relative;
+        right: -20px;
+        bottom: -20px;
+      }
+    }
+
+    @each $color, $color-value, $index in $cardColors {
+      &:nth-child(#{$color}) {
+        .services_card_icon {
+          &::before {
+            background-color: $color-value;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* NEWSLETTER */
+.newsletter {
+  background-color: $black;
+  background-image: url("/assets/images/form-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+
+  &_form {
+    form {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      label {
+        display: none;
+      }
+
+      .input {
+        border-color: #616264;
+        background-color: #1a1a1a;
+
+        &-group {
+          flex: 1;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/* CONTACT */
+.contact {
+  position: relative;
+
+  @include min_media($xl) {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      z-index: 2;
+      background-size: contain;
+    }
+
+    &::before {
+      left: 15%;
+      top: 2%;
+      width: 132px;
+      height: 48px;
+      background-image: url("/assets/images/ornament-23.png");
+    }
+
+    &::after {
+      left: 15%;
+      top: 55%;
+      width: 160px;
+      height: 72px;
+      background-image: url("/assets/images/ornament-25.png");
+    }
+  }
+  .wrapper {
+    box-shadow: 0 4px 150px rgb(74 74 74 / 10%);
+    align-items: normal;
+  }
+
+  &_details {
+    padding: 2rem;
+    background-color: #1b107a;
+    background-image: url("/assets/images/backgroung.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include min_media($lg){
+      padding: 3rem;
+    }
+
+    p {
+      flex: 1;
+      opacity: 0.8;
+      font-size: 14px;
+      line-height: 16.94px;
+    }
+  }
+
+  &_info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+    &_icon{
+      width: 32px;
+    }
+  }
+
+  &_form {
+    padding: 2rem;
+
+    @include min_media($lg){
+      padding: 3rem;
+    }
+  }
+}
+
+/* FOOTER */
+footer {
+  padding: 2rem 0;
+  background-color: $primary_dark;
+  color: transparentize($color: #fff, $amount: 0.5);
+
+  .wrapper {
+    @extend %flex-center;
+    @include max_media($lg) {
+      flex-direction: column;
+    }
+
+    @include min_media($lg) {
+      @extend %min-lg-flex-between;
+    }
+
+    & > * {
+      flex: 1;
+    }
+
+    @include min_media($lg) {
+      div:nth-child(2) {
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: flex-end;
+
+        a {
+          border-color: #3d3d3d;
+          &:hover {
+            border-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* BACK TO TOP */
+#back_to_top {
+  position: fixed;
+  right: 2rem;
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  bottom: 8rem;
+  @extend %flex-center;
+
+  &:hover{
+    background-color: $primary;
+  }
+
+  @include max_media($lg) {
+    bottom: 4rem;
+    right: 1rem;
+  }
+}

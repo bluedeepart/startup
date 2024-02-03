@@ -1,0 +1,31 @@
+$breakpoints: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  // xxl: $xxl
+);
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  .wrapper {
+    @include max_media($lg) {
+      & > div:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  .container {
+    @include min_media($breakpoint-value) {
+      max-width: calc(#{$breakpoint-value} - ($gutter * 2));
+    }
+  }
+}
