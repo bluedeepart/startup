@@ -180,7 +180,7 @@ section {
       top: 70%;
       width: 132px;
       height: 38px;
-      background-image: url("/assets/images/ornament-19.png");
+      background-image: url("../../assets/images/ornament-19.png");
     }
 
     &::after {
@@ -188,7 +188,7 @@ section {
       top: 87%;
       width: 182px;
       height: 62px;
-      background-image: url("/assets/images/ornament-21.png");
+      background-image: url("../../assets/images/ornament-21.png");
       background-size: contain;
     }
   }
@@ -249,7 +249,7 @@ section {
     }
 
     &::after {
-      background-image: url("/assets/images/ornament-18.png");
+      background-image: url("../../assets/images/ornament-18.png");
       left: 44%;
       top: 34%;
       width: 133px;
@@ -306,7 +306,7 @@ section {
   &::after {
     content: "";
     position: absolute;
-    background-image: url("/assets/images/ornament-22.png");
+    background-image: url("../../assets/images/ornament-22.png");
     left: 13%;
     top: 50%;
     width: 160px;
@@ -391,7 +391,7 @@ $cardColors: (
       height: 38px;
       z-index: -1;
       opacity: 0.5;
-      background-image: url("/assets/images/ornament-20.png");
+      background-image: url("../../assets/images/ornament-20.png");
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -414,7 +414,7 @@ $cardColors: (
         top: 25%;
         width: 132px;
         height: 38px;
-        background-image: url("/assets/images/ornament-20.png");
+        background-image: url("../../assets/images/ornament-20.png");
       }
 
       &::after {
@@ -422,7 +422,7 @@ $cardColors: (
         bottom: -3%;
         width: 182px;
         height: 72px;
-        background-image: url("/assets/images/ornament-24.png");
+        background-image: url("../../assets/images/ornament-24.png");
         background-size: contain;
       }
     }
@@ -493,7 +493,7 @@ $cardColors: (
 /* NEWSLETTER */
 .newsletter {
   background-color: $black;
-  background-image: url("/assets/images/form-bg.png");
+  background-image: url("../../assets/images/form-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: $white;
@@ -540,7 +540,7 @@ $cardColors: (
       top: 2%;
       width: 132px;
       height: 48px;
-      background-image: url("/assets/images/ornament-23.png");
+      background-image: url("../../assets/images/ornament-23.png");
     }
 
     &::after {
@@ -548,7 +548,7 @@ $cardColors: (
       top: 55%;
       width: 160px;
       height: 72px;
-      background-image: url("/assets/images/ornament-25.png");
+      background-image: url("../../assets/images/ornament-25.png");
     }
   }
   .wrapper {
@@ -559,7 +559,7 @@ $cardColors: (
   &_details {
     padding: 2rem;
     background-color: #1b107a;
-    background-image: url("/assets/images/backgroung.png");
+    background-image: url("../../assets/images/backgroung.png");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
