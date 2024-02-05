@@ -550,14 +550,14 @@ section {
     top: 70%;
     width: 132px;
     height: 38px;
-    background-image: url("/assets/images/ornament-19.png");
+    background-image: url("../../assets/images/ornament-19.png");
   }
   .banner::after {
     left: 67%;
     top: 87%;
     width: 182px;
     height: 62px;
-    background-image: url("/assets/images/ornament-21.png");
+    background-image: url("../../assets/images/ornament-21.png");
     background-size: contain;
   }
 }
@@ -612,7 +612,7 @@ section {
     z-index: -1;
   }
   .about_us::after {
-    background-image: url("/assets/images/ornament-18.png");
+    background-image: url("../../assets/images/ornament-18.png");
     left: 44%;
     top: 34%;
     width: 133px;
@@ -671,7 +671,7 @@ section {
 .mission::after {
   content: "";
   position: absolute;
-  background-image: url("/assets/images/ornament-22.png");
+  background-image: url("../../assets/images/ornament-22.png");
   left: 13%;
   top: 50%;
   width: 160px;
@@ -751,7 +751,7 @@ section {
     height: 38px;
     z-index: -1;
     opacity: 0.5;
-    background-image: url("/assets/images/ornament-20.png");
+    background-image: url("../../assets/images/ornament-20.png");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -772,14 +772,14 @@ section {
     top: 25%;
     width: 132px;
     height: 38px;
-    background-image: url("/assets/images/ornament-20.png");
+    background-image: url("../../assets/images/ornament-20.png");
   }
   .services .container::after {
     right: -10%;
     bottom: -3%;
     width: 182px;
     height: 72px;
-    background-image: url("/assets/images/ornament-24.png");
+    background-image: url("../../assets/images/ornament-24.png");
     background-size: contain;
   }
 }
@@ -863,7 +863,7 @@ section {
 /* NEWSLETTER */
 .newsletter {
   background-color: var(--black);
-  background-image: url("/assets/images/form-bg.png");
+  background-image: url("../../assets/images/form-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
@@ -908,14 +908,14 @@ section {
     top: 2%;
     width: 132px;
     height: 48px;
-    background-image: url("/assets/images/ornament-23.png");
+    background-image: url("../../assets/images/ornament-23.png");
   }
   .contact::after {
     left: 15%;
     top: 55%;
     width: 160px;
     height: 72px;
-    background-image: url("/assets/images/ornament-25.png");
+    background-image: url("../../assets/images/ornament-25.png");
   }
 }
 .contact .wrapper {
@@ -928,7 +928,7 @@ section {
 .contact_details {
   padding: 2rem;
   background-color: #1b107a;
-  background-image: url("/assets/images/backgroung.png");
+  background-image: url("../../assets/images/backgroung.png");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 20px;
