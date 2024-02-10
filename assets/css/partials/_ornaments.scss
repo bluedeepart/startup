@@ -1,0 +1,138 @@
+%random_shapes {
+  position: relative;
+  @include min_media($lg) {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.banner {
+  @extend %random_shapes;
+
+  @include min_media($lg) {
+    &::before,
+    &::after {
+      z-index: 2;
+    }
+
+    &::before {
+      left: 42%;
+      top: 70%;
+      width: 132px;
+      height: 38px;
+      background-image: url("../../assets/images/ornament-19.png");
+    }
+
+    &::after {
+      left: 67%;
+      top: 87%;
+      width: 182px;
+      height: 62px;
+      background-image: url("../../assets/images/ornament-21.png");
+      background-size: contain;
+    }
+  }
+}
+
+.about_us {
+  @extend %random_shapes;
+
+  @include min_media($lg) {
+    &::after {
+      background-image: url("../../assets/images/ornament-18.png");
+      left: 44%;
+      top: 34%;
+      width: 133px;
+      height: 40px;
+      background-size: contain;
+    }
+  }
+}
+
+.mission {
+  @extend %random_shapes;
+
+  &::after {
+    background-image: url("../../assets/images/ornament-22.png");
+    left: 13%;
+    top: 50%;
+    width: 160px;
+    height: 60px;
+    background-size: contain;
+  }
+}
+
+.services {
+  @extend %random_shapes;
+  @include min_media($lg) {
+    &::before {
+      right: 50%;
+      top: 50%;
+      width: 132px;
+      height: 38px;
+      z-index: -1;
+      opacity: 0.5;
+      background-image: url("../../assets/images/ornament-20.png");
+    }
+  }
+
+  .container {
+    @extend %random_shapes;
+    @include min_media($lg) {
+      &::before,
+      &::after {
+        z-index: 2;
+      }
+
+      &::before {
+        right: 0;
+        top: 25%;
+        width: 132px;
+        height: 38px;
+        background-image: url("../../assets/images/ornament-20.png");
+      }
+
+      &::after {
+        right: -10%;
+        bottom: -3%;
+        width: 182px;
+        height: 72px;
+        background-image: url("../../assets/images/ornament-24.png");
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.contact {
+  @extend %random_shapes;
+
+  @include min_media($lg) {
+    &::before,
+    &::after {
+      z-index: 2;
+      background-size: contain;
+    }
+
+    &::before {
+      left: 15%;
+      top: 2%;
+      width: 132px;
+      height: 48px;
+      background-image: url("../../assets/images/ornament-23.png");
+    }
+
+    &::after {
+      left: 15%;
+      top: 55%;
+      width: 160px;
+      height: 72px;
+      background-image: url("../../assets/images/ornament-25.png");
+    }
+  }
+}

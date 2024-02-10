@@ -56,6 +56,16 @@ $lg: 62rem;
 $md: 48rem;
 $sm: 36rem;
 
+%transparent_box {
+  content: "";
+  position: absolute;
+  filter: blur(0);
+  background-color: rgb(255 255 255/ 30%);
+  backdrop-filter: blur(5px);
+  opacity: 0.75;
+  border-radius: 1rem;
+}
+
 @mixin min_media($width) {
   @media only screen and (min-width: $width) {
     @content;

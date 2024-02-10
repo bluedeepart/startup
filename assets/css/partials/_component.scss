@@ -63,17 +63,11 @@
   }
 
   &::after {
-    content: "";
-    position: absolute;
+    @extend %transparent_box;
     bottom: -3rem;
     right: -3rem;
-    filter: blur(0);
-    background-color: rgb(255 255 255/ 30%);
-    backdrop-filter: blur(5px);
     width: 113px;
     height: 113px;
-    opacity: 0.75;
-    border-radius: 1rem;
   }
 
   &-caption {
@@ -106,7 +100,7 @@
     height: 24px;
     right: -30px;
     top: 0;
-    background-image: url("/assets/images/icons/star.png");
+    background-image: url("../../assets/images/icons/star.png");
   }
 }
 
