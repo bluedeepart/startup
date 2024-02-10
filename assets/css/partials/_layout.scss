@@ -97,7 +97,7 @@
       padding-right: 17px;
 
       ul {
-        li {
+        li:not(.header_nav_controller) {
           padding: 1.25rem 0;
         }
       }

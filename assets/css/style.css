@@ -507,7 +507,7 @@ img {
     overflow: hidden;
     padding-right: 17px;
   }
-  .header_nav ul li {
+  .header_nav ul li:not(.header_nav_controller) {
     padding: 1.25rem 0;
   }
 }
