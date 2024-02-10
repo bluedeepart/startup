@@ -69,17 +69,29 @@
 
   &::after {
     @extend %transparent_box;
-    bottom: -3rem;
-    right: -3rem;
-    width: 113px;
-    height: 113px;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    width: 80px;
+    height: 80px;
+
+    @include min_media($md) {
+      bottom: -3rem;
+      right: -3rem;
+      width: 113px;
+      height: 113px;
+    }
   }
 
   &-caption {
     color: $white;
     position: absolute;
-    bottom: 3rem;
-    left: 3rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+
+    @include min_media($md) {
+      bottom: 3rem;
+      left: 3rem;
+    }
 
     h4 {
       margin-bottom: 1rem;
@@ -112,8 +124,12 @@
 /* CARD */
 .card {
   border-radius: 1rem;
-  padding: 3rem;
+  padding: 1.25rem;
   background-color: $blue_gray;
+
+  @include min_media($md){
+    padding: 3rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: 1.5rem;

@@ -31,6 +31,22 @@
 
   &_nav {
     @extend %headerMenu;
+
+    &_controller{
+      @include max_media($lg){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+    }
+
+    &_logo {
+      @include min_media($lg) {
+        display: none;
+      }
+    }
+
     ul {
       @extend %headerMenu;
       list-style: none;
@@ -71,15 +87,15 @@
     @include max_media($lg) {
       position: fixed;
       background-color: var(--white);
-      top: 80px;
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% - 80px);
       z-index: 3;
       font-size: 1.25rem;
       transition: height 0.3s ease-in-out;
       height: 0;
       overflow: hidden;
+      padding-right: 17px;
 
       ul {
         li {
@@ -127,7 +143,8 @@
     &-open {
       .header {
         &_nav {
-          height: calc(100vh - 80px);
+          height: 100vh;
+          overflow-y: auto;
         }
       }
 
@@ -367,7 +384,7 @@ $cardColors: (
     flex: 1 0 50%;
     border: 1px solid $gray_2;
     background-color: $white;
-    padding: 2rem 1rem;
+    padding: 2rem 1.25rem;
     border-radius: 1.25rem;
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -514,6 +531,14 @@ $cardColors: (
 
     .social-icons {
       margin-top: 3rem;
+    }
+
+    @include min_media($lg) {
+      padding: 3rem;
+
+      .social-icons {
+        margin-top: 0;
+      }
     }
 
     @include min_media($lg) {
