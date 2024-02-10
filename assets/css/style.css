@@ -566,6 +566,20 @@ section {
 }
 
 /* BANNER */
+.banner {
+  position: relative;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  background-color: var(--blue_gray);
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  bottom: -65%;
+  z-index: -1;
+}
 @media only screen and (max-width: 767px) {
   .banner {
     padding-top: 3rem;
@@ -611,17 +625,6 @@ section {
 .about_us {
   background-color: var(--blue_gray);
   position: relative;
-}
-.about_us::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 110%;
-  background-color: var(--blue_gray);
-  top: -28%;
-  -webkit-transform: rotate(175deg);
-          transform: rotate(175deg);
-  z-index: -1;
 }
 .about_us .wrapper .about_us_content {
   margin-top: 4rem;

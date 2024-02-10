@@ -186,6 +186,19 @@ section {
 
 /* BANNER */
 .banner {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    background-color: $blue_gray;
+    transform: rotate(-10deg);
+    bottom: -65%;
+    z-index: -1;
+  }
+
   @include max_media($md) {
     padding-top: 3rem;
   }
@@ -236,16 +249,16 @@ section {
   position: relative;
 
   // @include min_media($lg) {
-  &::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 110%;
-    background-color: var(--blue_gray);
-    top: -28%;
-    transform: rotate(175deg);
-    z-index: -1;
-  }
+  //   &::before {
+  //     content: "";
+  //     position: absolute;
+  //     height: 100%;
+  //     width: 110%;
+  //     background-color: var(--blue_gray);
+  //     top: -28%;
+  //     transform: rotate(175deg);
+  //     z-index: -1;
+  //   }
   // }
 
   .wrapper {
