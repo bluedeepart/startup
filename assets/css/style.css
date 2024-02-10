@@ -440,6 +440,16 @@ img {
   transition: all 0.3s ease-in-out;
   background-color: var(--dark_gray);
 }
+.header_nav ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+.header_nav ul li a:not(.btn) {
+  color: inherit;
+}
+.header_nav ul li a:not(.btn):hover {
+  color: var(--primary_light);
+}
 @media only screen and (max-width: 991px) {
   .header_nav_controller {
     display: -webkit-box;
@@ -458,16 +468,6 @@ img {
   .header_nav_logo {
     display: none;
   }
-}
-.header_nav ul {
-  list-style: none;
-  margin-bottom: 0;
-}
-.header_nav ul li a:not(.btn) {
-  color: inherit;
-}
-.header_nav ul li a:not(.btn):hover {
-  color: var(--primary_light);
 }
 @media only screen and (max-width: 991px) and (min-width: 576px) {
   .header_nav ul {

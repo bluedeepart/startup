@@ -31,6 +31,20 @@
 
   &_nav {
     @extend %headerMenu;
+    ul {
+      @extend %headerMenu;
+      list-style: none;
+      margin-bottom: 0;
+      li {
+        a:not(.btn) {
+          color: inherit;
+
+          &:hover {
+            color: $primary_light;
+          }
+        }
+      }
+    }
 
     &_controller{
       @include max_media($lg){
@@ -44,21 +58,6 @@
     &_logo {
       @include min_media($lg) {
         display: none;
-      }
-    }
-
-    ul {
-      @extend %headerMenu;
-      list-style: none;
-      margin-bottom: 0;
-      li {
-        a:not(.btn) {
-          color: inherit;
-
-          &:hover {
-            color: $primary_light;
-          }
-        }
       }
     }
 
