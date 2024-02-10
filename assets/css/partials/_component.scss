@@ -53,12 +53,17 @@
 
 /* IMAGE THUMB */
 .img-thumb {
-  border-radius: 40px;
+  --defautRadius: 10px;
+  @include min_media($md) {
+    --defautRadius: 40px;
+  }
+
+  border-radius: var(--defautRadius);
   position: relative;
   display: inline-block;
 
   & > img {
-    border-radius: 40px;
+    border-radius: var(--defautRadius);
     position: relative;
   }
 
@@ -170,6 +175,7 @@
       @extend %flex-center;
       border: 1px solid transparent;
       border-radius: 50px;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         background-color: $primary;

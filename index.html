@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- STYLE SHEET -->
     <link rel="stylesheet" href="assets/css/style.min.css">
-    <title>Figma Test Project</title>
+    <title>KodeForm - Home page</title>
   </head>
 
   <body>
@@ -19,18 +19,21 @@
         <div class="header_logo">
           <img src="assets/images/logo.png" alt="Logo">
         </div>
-        <button id="mega_menu_btn" class="btn btn-text btn-menu">
-          <span>Menu</span>
-        </button>
         <nav class="header_nav">
           <ul>
             <li><a href="#about_us">About Us</a></li>
             <li><a href="#our_mission">Our Mission</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#contact_us" class="btn btn-primary">Contact Us</a></li>
           </ul>
-          <a href="#contact_us" class="btn btn-primary">Contact Us</a>
         </nav>
+        <div class="header_nav_mob">
+          <!-- <a href="#contact_us" class="btn btn-primary">Contact Us</a> -->
+          <button id="mega_menu_btn" class="btn btn-text btn-menu">
+            <span>Menu</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -287,7 +290,7 @@
               </div>
               <div class="input-group">
                 <label for="project_details">Project Details</label>
-                <textarea  class="input" name="project_details" id="project_details" rows="5" placeholder="Enter the Project Details"></textarea>
+                <textarea class="input" name="project_details" id="project_details" rows="5" placeholder="Enter the Project Details"></textarea>
               </div>
               <button type="submit" class="btn btn-primary" disabled>Send Message</button>
             </form>

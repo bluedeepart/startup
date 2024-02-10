@@ -3,9 +3,11 @@
   --secondary: #f5602d;
   --primary_light: #3524c4;
   --primary_dark: #040025;
+  --primary_dark_2: #1b107a;
   --black: #000000;
   --white: #ffffff;
   --gray: #f4f4fb;
+  --gray_2: #f4f4fb;
   --label_color: #454545;
   --border_color: #d4d5d9;
   --dark_gray: #262626;
@@ -28,14 +30,21 @@ $primary: var(--primary);
 $secondary: var(--secondary);
 $primary_light: var(--primary_light);
 $primary_dark: var(--primary_dark);
+$primary_dark_2: var(--primary_dark_2);
 $black: var(--black);
 $white: var(--white);
 $gray: var(--gray);
+$gray_2: var(--gray_2);
 $label_color: var(--label_color);
 $border_color: var(--border_color);
 $dark_gray: var(--dark_gray);
 $light_gray: var(--light_gray);
 $blue_gray: var(--blue_gray);
+
+$footer_border: #3d3d3d;
+$white_color: #fff;
+$newsletter_input_border: #616264;
+$newsletter_input_bg: #1a1a1a;
 
 $light_purple: var(--light_purple);
 $light_pink: var(--light_pink);
@@ -50,11 +59,11 @@ $gutter: var(--gutter);
 
 // Breakpoints
 $base_size: 1rem;
-// $xxl: 90rem;
-$xl: 75rem;
-$lg: 62rem;
-$md: 48rem;
-$sm: 36rem;
+// $xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
 
 %transparent_box {
   content: "";
@@ -140,10 +149,11 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 2.75rem;
+  font-size: 32px;
+  line-height: 46px;
   font-weight: 900;
   letter-spacing: 0.02em;
+  margin-bottom: 1rem;
 
   @include min_media($lg) {
     line-height: 4.125rem;
@@ -153,8 +163,13 @@ h1 {
 
 h2,
 h3 {
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 20px;
+  line-height: 32px;
+
+  @include min_media($md) {
+    font-size: 32px;
+    line-height: 39px;
+  }
 }
 
 h2 {

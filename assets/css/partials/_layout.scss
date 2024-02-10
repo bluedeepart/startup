@@ -3,36 +3,90 @@
   @include min_media($lg) {
     display: flex;
     align-items: center;
-    gap: 1rem;
-  }
-
-  @include min_media($lg) {
     gap: 3rem;
-  }
-
-  @include max_media($lg) {
-    @extend %max-lg-flex-center;
-    gap: 2rem;
-    flex-direction: column;
   }
 }
 
 .header {
-  // z-index: 2;
   background-color: $white;
   padding: 1rem 0;
-
+  // z-index: 2;
   // @include min_media($lg) {
   //   position: sticky;
   //   top: 0;
   // }
 
+  @include max_media($lg) {
+    box-shadow: 0 4px 10px rgb(0 0 0 /5%);
+  }
+
   %menu {
-    width: 24px;
-    height: 2px;
+    width: 28px;
+    height: 3px;
+    border-radius: 4px;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-    background-color: $primary_light;
+    background-color: $dark_gray;
+  }
+
+  &_nav {
+    @extend %headerMenu;
+    ul {
+      @extend %headerMenu;
+      list-style: none;
+      margin-bottom: 0;
+      li {
+        a:not(.btn) {
+          color: inherit;
+
+          &:hover {
+            color: $primary_light;
+          }
+        }
+      }
+    }
+
+    @include max_media($lg) {
+      @include min_media($sm) {
+        ul {
+          padding-left: 10px;
+          padding-right: 10px;
+          li {
+            padding: 1.25rem 0;
+          }
+        }
+      }
+    }
+
+    &_mob {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+
+      @include min_media($lg) {
+        display: none;
+      }
+    }
+
+    @include max_media($lg) {
+      position: fixed;
+      background-color: var(--white);
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 80px);
+      z-index: 3;
+      font-size: 1.25rem;
+      transition: height 0.3s ease-in-out;
+      height: 0;
+      overflow: hidden;
+
+      ul {
+        li {
+          padding: 1.25rem 0;
+        }
+      }
+    }
   }
 
   .btn-menu {
@@ -43,6 +97,7 @@
 
     span {
       font-size: 0;
+      width: 20px;
       position: relative;
       @extend %menu;
 
@@ -55,11 +110,11 @@
       }
 
       &::before {
-        top: -6px;
+        top: -8px;
       }
 
       &::after {
-        top: 6px;
+        top: 8px;
       }
     }
 
@@ -68,44 +123,16 @@
     }
   }
 
-  &_nav {
-    @extend %headerMenu;
-    ul {
-      @extend %headerMenu;
-      list-style: none;
-      margin-bottom: 0;
-      li {
-        a {
-          color: inherit;
-
-          &:hover {
-            color: $primary_light;
-          }
+  @include max_media($lg) {
+    &-open {
+      .header {
+        &_nav {
+          height: calc(100vh - 80px);
         }
-      }
-    }
-    @include max_media($lg) {
-      position: fixed;
-      background-color: #fff;
-      top: 82px;
-      left: -100%;
-      width: 100%;
-      height: calc(100% - 82px);
-      z-index: 3;
-      padding: 0 3rem 3rem;
-      font-size: 1.5rem;
-      transition: left 0.3s ease-in-out;
-    }
-  }
-
-  &-open {
-    .header {
-      &_nav {
-        left: 0;
       }
 
       .btn-menu {
-        spna {
+        span {
           transform: rotate(-45deg);
           &::before {
             top: 0;
@@ -127,15 +154,15 @@
 
 /* BODY */
 $bannerSpaces: (
-  $sm: $base_size * 3,
-  $md: $base_size * 4,
-  $lg: $base_size * 6,
+  $sm: $base_size * 5,
+  $md: $base_size * 6,
+  $lg: $base_size * 7,
   $xl: $base_size * 8,
   // $xxl: $base_size * 6
 );
 
 section {
-  padding: 2.5rem 0;
+  padding: 5rem 0;
 
   @each $space, $space-value in $bannerSpaces {
     @include min_media($space) {
@@ -159,6 +186,10 @@ section {
 
 /* BANNER */
 .banner {
+  @include max_media($md) {
+    padding-top: 3rem;
+  }
+
   @include min_media($lg) {
     &_content {
       max-width: 30rem;
@@ -204,41 +235,35 @@ section {
   background-color: $blue_gray;
   position: relative;
 
-  @include min_media($lg) {
-    &::before {
-      content: "";
-      position: absolute;
-    }
-
-    &::before {
-      height: 100%;
-      width: 110%;
-      background-color: var(--blue_gray);
-      top: -28%;
-      transform: rotate(175deg);
-      z-index: -1;
-    }
+  // @include min_media($lg) {
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 110%;
+    background-color: var(--blue_gray);
+    top: -28%;
+    transform: rotate(175deg);
+    z-index: -1;
   }
+  // }
 
   .wrapper {
-    @include max_media($lg) {
-      display: flex;
-      flex-direction: column;
+    // @include max_media($lg) {
+    //   display: flex;
+    //   flex-direction: column;
 
-      .img-thumb {
-        order: 2;
-      }
-    }
+    //   .img-thumb {
+    //     order: 2;
+    //   }
+    // }
     .about_us {
       &_content {
+        margin-top: 4rem;
+
         @include min_media($lg) {
           padding-left: 8rem;
-        }
-
-        @include max_media($lg) {
-          order: 1;
-          margin-top: 0;
-          margin-bottom: 2rem;
+          margin-bottom: 0;
         }
       }
     }
@@ -266,12 +291,6 @@ section {
   .container {
     .wrapper {
       .img-thumb {
-        margin-bottom: 5rem;
-
-        @include min_media($lg) {
-          margin-bottom: 0;
-        }
-
         &::after {
           bottom: auto;
           width: 93px;
@@ -309,9 +328,14 @@ section {
       margin-bottom: 0;
 
       img {
-        width: 75px;
-        height: 75px;
         object-fit: contain;
+        width: 35px;
+        height: 35px;
+
+        @include min_media($md) {
+          width: 75px;
+          height: 75px;
+        }
       }
     }
   }
@@ -328,16 +352,6 @@ $cardColors: (
 );
 
 .services {
-  @each $color, $color-value, $index in $cardColors {
-    &:nth-child(#{$color}) {
-      .services_card_icon {
-        &::before {
-          background-color: $color-value;
-        }
-      }
-    }
-  }
-
   &_header {
     text-align: center;
     margin-bottom: 2rem;
@@ -351,11 +365,22 @@ $cardColors: (
 
   &_card {
     flex: 1 0 50%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid $gray_2;
+    background-color: $white;
     padding: 2rem 1rem;
     border-radius: 1.25rem;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    @each $color, $color-value, $index in $cardColors {
+      &:nth-child(#{$color}) {
+        .services_card_icon {
+          &::before {
+            background-color: $color-value;
+          }
+        }
+      }
+    }
 
     &::after {
       @extend %transparent_box;
@@ -410,7 +435,7 @@ $cardColors: (
         position: absolute;
         z-index: 0;
         border-radius: 50%;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
 
       img {
@@ -432,21 +457,34 @@ $cardColors: (
 
   &_form {
     form {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
+      @include min_media($md) {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
 
       label {
         display: none;
       }
 
       .input {
-        border-color: #616264;
-        background-color: #1a1a1a;
+        border-color: $newsletter_input_border;
+        background-color: $newsletter_input_bg;
 
         &-group {
           flex: 1;
-          margin-bottom: 0;
+          margin-top: 3rem;
+          @include min_media($md) {
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+        }
+      }
+
+      .btn {
+        width: 100%;
+        @include min_media($md) {
+          width: auto;
         }
       }
     }
@@ -464,7 +502,7 @@ $cardColors: (
 
   &_details {
     padding: 2rem;
-    background-color: #1b107a;
+    background-color: $primary_dark_2;
     background-image: url("../../assets/images/backgroung.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -474,8 +512,16 @@ $cardColors: (
     flex-direction: column;
     justify-content: space-between;
 
+    .social-icons {
+      margin-top: 3rem;
+    }
+
     @include min_media($lg) {
       padding: 3rem;
+
+      .social-icons {
+        margin-top: 0;
+      }
     }
 
     p {
@@ -483,6 +529,9 @@ $cardColors: (
       opacity: 0.8;
       font-size: 14px;
       line-height: 16.94px;
+      @include max_media($md) {
+        line-height: 26px;
+      }
     }
   }
 
@@ -496,6 +545,10 @@ $cardColors: (
     &_icon {
       width: 32px;
     }
+
+    p {
+      opacity: 1;
+    }
   }
 
   &_form {
@@ -504,6 +557,14 @@ $cardColors: (
     @include min_media($lg) {
       padding: 3rem;
     }
+
+    .btn {
+      width: 100%;
+
+      @include min_media($lg) {
+        width: auto;
+      }
+    }
   }
 }
 
@@ -511,14 +572,9 @@ $cardColors: (
 footer {
   padding: 2rem 0;
   background-color: $primary_dark;
-  color: transparentize($color: #fff, $amount: 0.5);
+  color: rgb(255 255 255 / 80%);
 
   .wrapper {
-    @extend %flex-center;
-    @include max_media($lg) {
-      flex-direction: column;
-    }
-
     @include min_media($lg) {
       @extend %min-lg-flex-between;
     }
@@ -534,12 +590,14 @@ footer {
 
       .social-icons {
         justify-content: flex-end;
+      }
+    }
 
-        a {
-          border-color: #3d3d3d;
-          &:hover {
-            border-color: $primary;
-          }
+    .social-icons {
+      a {
+        border-color: $footer_border;
+        &:hover {
+          border-color: $primary;
         }
       }
     }

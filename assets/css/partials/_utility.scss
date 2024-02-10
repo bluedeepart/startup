@@ -6,7 +6,8 @@ $breakpoints: (
   // xxl: $xxl
 );
 
-.container {
+.container,
+.header_nav ul {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -16,14 +17,15 @@ $breakpoints: (
   .wrapper {
     @include max_media($lg) {
       & > div:not(:last-child) {
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
       }
     }
   }
 }
 
 @each $breakpoint, $breakpoint-value in $breakpoints {
-  .container {
+  .container,
+  .header_nav ul{
     @include min_media($breakpoint-value) {
       max-width: calc(#{$breakpoint-value} - ($gutter * 2));
     }
