@@ -14,15 +14,9 @@ window.addEventListener('DOMContentLoaded', () => {
       const topSpacing = Math.floor(section.getBoundingClientRect().top);
 
       window.scrollTo({
-        top: topSpacing-80,
+        top: topSpacing,
         behavior: "smooth",
       });
-
-      // section.scrollIntoView({
-      // 	behavior: 'smooth',
-      // 	block: 'nearest',
-      // 	inline: 'nearest',
-      // });
 
       if (header.classList.contains('header-open')) {
         header.classList.remove('header-open');
