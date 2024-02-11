@@ -7,8 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /* SMOOTH SCROLLING */
   const menuItems = document.querySelectorAll('.header_nav a');
   menuItems.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+    link.addEventListener('click', () => {
       const sectionID = new URL(link.href).hash;
       let section = document.querySelector(sectionID);
       const topSpacing = Math.floor(section.getBoundingClientRect().top);

@@ -149,9 +149,9 @@ body {
   overflow-x: hidden;
 }
 
-// html{
-//   scroll-behavior: smooth;
-// }
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   @include max_media($lg){
