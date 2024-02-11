@@ -141,11 +141,22 @@ $sm: 576px;
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: $ff-serif;
   font-weight: 400;
   color: $dark_gray;
   overflow-x: hidden;
+}
+
+// html{
+//   scroll-behavior: smooth;
+// }
+
+body{
+  @include max_media($lg){
+    padding-top: 80px;
+  }
 }
 
 h1 {

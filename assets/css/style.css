@@ -86,11 +86,18 @@
           box-sizing: border-box;
 }
 
+html,
 body {
   font-family: var(--ff-serif);
   font-weight: 400;
   color: var(--dark_gray);
   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 991px) {
+  body {
+    padding-top: 80px;
+  }
 }
 
 h1 {
@@ -409,6 +416,11 @@ img {
 }
 
 /* HEADER */
+@media only screen and (min-width: 768px) {
+  .header_nav ul, .header_nav {
+    gap: 3rem;
+  }
+}
 @media only screen and (min-width: 992px) {
   .header_nav ul, .header_nav {
     display: -webkit-box;
@@ -417,7 +429,9 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -427,8 +441,17 @@ img {
 }
 @media only screen and (max-width: 991px) {
   .header {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 0;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+}
+@media only screen and (max-width: 575px) {
+  .header img {
+    max-height: 20px;
   }
 }
 .header .btn-menu span::before, .header .btn-menu span::after, .header .btn-menu span {
@@ -490,6 +513,11 @@ img {
 @media only screen and (min-width: 992px) {
   .header_nav_mob {
     display: none;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .header_nav_mob {
+    gap: 0;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -651,18 +679,16 @@ section {
   background-color: var(--blue_gray);
   position: relative;
 }
-@media only screen and (min-width: 992px) {
-  .about_us::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 110%;
-    background-color: var(--blue_gray);
-    top: -28%;
-    -webkit-transform: rotate(175deg);
-            transform: rotate(175deg);
-    z-index: -1;
-  }
+.about_us::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 110%;
+  background-color: var(--blue_gray);
+  top: -28%;
+  -webkit-transform: rotate(175deg);
+          transform: rotate(175deg);
+  z-index: -1;
 }
 .about_us .wrapper .about_us_content {
   margin-top: 4rem;
