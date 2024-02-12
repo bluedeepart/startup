@@ -13,17 +13,18 @@
   }
 }
 
+%menu {
+  width: 28px;
+  height: 3px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  background-color: $dark_gray;
+}
+
 .header {
   background-color: $white;
   padding: 1rem 0;
-
-  @include max_media($lg) {
-    z-index: 2;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 4px 10px rgb(0 0 0 /5%);
-  }
 
   img {
     @include max_media($sm) {
@@ -31,19 +32,12 @@
     }
   }
 
-  %menu {
-    width: 28px;
-    height: 3px;
-    border-radius: 4px;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-    background-color: $dark_gray;
-  }
-
   &_nav {
     @extend %headerMenu;
     ul {
       @extend %headerMenu;
+      padding-left: 0;
+      padding-right: 0;
       list-style: none;
       margin-bottom: 0;
       li {
@@ -57,15 +51,6 @@
       }
     }
 
-    &_controller {
-      @include max_media($lg) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 0;
-      }
-    }
-
     &_logo {
       @include min_media($lg) {
         display: none;
@@ -75,8 +60,6 @@
     @include max_media($lg) {
       @include min_media($sm) {
         ul {
-          padding-left: 10px;
-          padding-right: 10px;
           li {
             padding: 1.25rem 0;
           }
@@ -99,20 +82,8 @@
     }
 
     @include max_media($lg) {
-      position: fixed;
-      background-color: var(--white);
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 3;
-      font-size: 1.25rem;
-      transition: height 0.3s ease-in-out;
-      height: 0;
-      overflow: hidden;
-      padding-right: 17px;
-
       ul {
-        li:not(.header_nav_controller) {
+        li {
           padding: 1.25rem 0;
         }
       }
@@ -153,14 +124,37 @@
     }
   }
 
+  &_top {
+    @extend %flex-between;
+    flex: 1 1 auto;
+  }
+
   @include max_media($lg) {
+    padding: 0;
+    box-shadow: 0 4px 10px rgb(0 0 0 /5%);
+
+    position: fixed;
+    background-color: var(--white);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    font-size: 1.25rem;
+    transition: height 0.3s ease-in-out;
+    height: 80px;
+    overflow: hidden;
+
+    &_top {
+      padding: 1rem 0;
+    }
+
     &-open {
-      .header {
-        &_nav {
-          height: 100vh;
-          overflow-y: auto;
-        }
-      }
+      height: 100vh;
+
+      // .container {
+      //   height: 100%;
+      //   overflow-y: auto;
+      // }
 
       .btn-menu {
         span {
@@ -178,7 +172,7 @@
   }
 
   .container {
-    @extend %flex-between;
+    @extend %min-lg-flex-between;
     flex: 1 1 auto;
   }
 }
