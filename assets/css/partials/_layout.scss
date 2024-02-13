@@ -647,6 +647,7 @@ footer {
   width: 52px;
   height: 52px;
   bottom: 8rem;
+  display: none;
   @extend %flex-center;
 
   &:hover {

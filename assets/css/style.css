@@ -1056,6 +1056,7 @@ footer .wrapper .social-icons a:hover {
   width: 52px;
   height: 52px;
   bottom: 8rem;
+  display: none;
 }
 #back_to_top:hover {
   background-color: var(--primary);
