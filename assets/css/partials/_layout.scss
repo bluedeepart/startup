@@ -151,10 +151,11 @@
     &-open {
       height: 100vh;
 
-      // .container {
-      //   height: 100%;
-      //   overflow-y: auto;
-      // }
+      &_nav_mob{
+        .btn{
+          display: none;
+        }
+      }
 
       .btn-menu {
         span {

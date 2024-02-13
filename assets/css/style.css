@@ -558,6 +558,9 @@ img {
   .header-open {
     height: 100vh;
   }
+  .header-open_nav_mob .btn {
+    display: none;
+  }
   .header-open .btn-menu span {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
