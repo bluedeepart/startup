@@ -32,16 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('header-open');
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = '0';
-
-      header.querySelector('.container').style.overflowY = 'hidden';
-      header.querySelector('.container').style.height = 'auto';
     } else {
       header.classList.add('header-open');
       document.body.style.overflowY = 'hidden';
       document.body.style.paddingRight = '17px';
-
-      header.querySelector('.container').style.overflowY = 'auto';
-      header.querySelector('.container').style.height = '100%';
     }
   }
   megaMenuBtn.addEventListener('click', handleMobMenu);

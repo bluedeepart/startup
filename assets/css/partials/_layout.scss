@@ -151,8 +151,8 @@
     &-open {
       height: 100vh;
 
-      .header_nav_mob{
-        .btn:not(.btn-menu){
+      .header_nav_mob {
+        .btn:not(.btn-menu) {
           display: none;
         }
       }
@@ -173,8 +173,17 @@
   }
 
   .container {
+    overflow-y: auto;
+    height: 100%;
     @extend %min-lg-flex-between;
     flex: 1 1 auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
