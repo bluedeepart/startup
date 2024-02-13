@@ -558,7 +558,7 @@ img {
   .header-open {
     height: 100vh;
   }
-  .header-open_nav_mob .btn {
+  .header-open .header_nav_mob .btn:not(.btn-menu) {
     display: none;
   }
   .header-open .btn-menu span {

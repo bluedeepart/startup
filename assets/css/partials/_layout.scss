@@ -151,8 +151,8 @@
     &-open {
       height: 100vh;
 
-      &_nav_mob{
-        .btn{
+      .header_nav_mob{
+        .btn:not(.btn-menu){
           display: none;
         }
       }
