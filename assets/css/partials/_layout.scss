@@ -26,9 +26,19 @@
   background-color: $white;
   padding: 1rem 0;
 
-  img {
-    @include max_media($sm) {
+  svg {
+    display: block;
+    .path {
+      &-primary {
+        fill: $primary;
+        &-dark {
+          fill: $primary_logo;
+        }
+      }
+    }
+    @include max_media($md) {
       max-height: 20px;
+      width: auto;
     }
   }
 
@@ -604,10 +614,24 @@ $cardColors: (
 }
 
 /* FOOTER */
-footer {
+.footer {
   padding: 2rem 0;
   background-color: $primary_dark;
   color: rgb(255 255 255 / 80%);
+
+  svg {
+    .path {
+      fill: $white;
+
+      &-primary {
+        fill: $primary;
+      }
+    }
+    @include max_media($md) {
+      max-height: 20px;
+      width: auto;
+    }
+  }
 
   .wrapper {
     @include min_media($lg) {
@@ -616,6 +640,14 @@ footer {
 
     & > * {
       flex: 1;
+    }
+
+    & > div {
+      &:not(:last-child) {
+        @include max_media($lg) {
+          margin-bottom: 2rem;
+        }
+      }
     }
 
     @include min_media($lg) {
@@ -629,6 +661,7 @@ footer {
     }
 
     .social-icons {
+      margin-bottom: 0;
       a {
         border-color: $footer_border;
         &:hover {

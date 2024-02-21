@@ -1,5 +1,6 @@
 :root {
   --primary: #4c39f0;
+  --primary_logo: #08004A;
   --secondary: #f5602d;
   --primary_light: #3524c4;
   --primary_dark: #040025;
@@ -21,12 +22,15 @@
   --light_red: #ffe9e9;
   --light_green: #f3ffd8;
 
+  --red: #cc0000;
+
   --ff-serif: "Inter", "sans-serif";
 
   --gutter: 1.25rem;
 }
 
 $primary: var(--primary);
+$primary_logo: var(--primary_logo);
 $secondary: var(--secondary);
 $primary_light: var(--primary_light);
 $primary_dark: var(--primary_dark);

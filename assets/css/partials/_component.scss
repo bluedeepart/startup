@@ -127,7 +127,7 @@
   padding: 1.25rem;
   background-color: $blue_gray;
 
-  @include min_media($md){
+  @include min_media($md) {
     padding: 3rem;
   }
 
@@ -173,6 +173,12 @@
       font-weight: 600;
       margin-bottom: 8px;
       display: block;
+    }
+
+    .error-message {
+      color: var(--red);
+      font-size: 80%;
+      margin-top: 4px;
     }
   }
 }

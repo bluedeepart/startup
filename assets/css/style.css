@@ -1,5 +1,6 @@
 :root {
   --primary: #4c39f0;
+  --primary_logo: #08004A;
   --secondary: #f5602d;
   --primary_light: #3524c4;
   --primary_dark: #040025;
@@ -19,6 +20,7 @@
   --light_blue: #d8f3ff;
   --light_red: #ffe9e9;
   --light_green: #f3ffd8;
+  --red: #cc0000;
   --ff-serif: "Inter", "sans-serif";
   --gutter: 1.25rem;
 }
@@ -64,7 +66,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-  footer .wrapper, .header .container {
+  .footer .wrapper, .header .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -396,6 +398,11 @@ img {
   margin-bottom: 8px;
   display: block;
 }
+.input-group .error-message {
+  color: var(--red);
+  font-size: 80%;
+  margin-top: 4px;
+}
 
 /* SOCIAL ICONS */
 .social-icons {
@@ -453,9 +460,19 @@ img {
   background-color: var(--white);
   padding: 1rem 0;
 }
-@media only screen and (max-width: 575px) {
-  .header img {
+.header svg {
+  display: block;
+}
+.header svg .path-primary {
+  fill: var(--primary);
+}
+.header svg .path-primary-dark {
+  fill: var(--primary_logo);
+}
+@media only screen and (max-width: 767px) {
+  .header svg {
     max-height: 20px;
+    width: auto;
   }
 }
 .header_nav ul {
@@ -1021,30 +1038,50 @@ section {
 }
 
 /* FOOTER */
-footer {
+.footer {
   padding: 2rem 0;
   background-color: var(--primary_dark);
   color: rgba(255, 255, 255, 0.8);
 }
-footer .wrapper > * {
+.footer svg .path {
+  fill: var(--white);
+}
+.footer svg .path-primary {
+  fill: var(--primary);
+}
+@media only screen and (max-width: 767px) {
+  .footer svg {
+    max-height: 20px;
+    width: auto;
+  }
+}
+.footer .wrapper > * {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
+@media only screen and (max-width: 991px) {
+  .footer .wrapper > div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
 @media only screen and (min-width: 992px) {
-  footer .wrapper div:nth-child(2) {
+  .footer .wrapper div:nth-child(2) {
     text-align: center;
   }
-  footer .wrapper .social-icons {
+  .footer .wrapper .social-icons {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
 }
-footer .wrapper .social-icons a {
+.footer .wrapper .social-icons {
+  margin-bottom: 0;
+}
+.footer .wrapper .social-icons a {
   border-color: #3d3d3d;
 }
-footer .wrapper .social-icons a:hover {
+.footer .wrapper .social-icons a:hover {
   border-color: var(--primary);
 }
 
