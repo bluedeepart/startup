@@ -24,7 +24,12 @@
 
 .header {
   background-color: $white;
-  padding: 1rem 0;
+  padding: 1.55rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 4px 64px rgb(0 0 0 /5%);
+  z-index: 9;
 
   svg {
     display: block;
@@ -52,10 +57,19 @@
       margin-bottom: 0;
       li {
         a:not(.btn) {
+          border-bottom: 2px solid transparent;
+          padding-bottom: 4px;
           color: inherit;
+          transition: all .3s ease-in-out;
+          // font-weight: 600;
 
           &:hover {
             color: $primary_light;
+          }
+
+          &.active {
+            color: $primary;
+            border-color: $primary;
           }
         }
       }
@@ -201,13 +215,13 @@
 $bannerSpaces: (
   $sm: $base_size * 5,
   $md: $base_size * 6,
-  $lg: $base_size * 7,
-  $xl: $base_size * 8,
+  // $lg: $base_size * 7,
+  // $xl: $base_size * 8,
   // $xxl: $base_size * 6
 );
 
 section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 
   @each $space, $space-value in $bannerSpaces {
     @include min_media($space) {
@@ -231,9 +245,7 @@ section {
 
 /* BANNER */
 .banner {
-  @include max_media($md) {
-    padding-top: 3rem;
-  }
+  padding-top: 3rem;
 
   @include min_media($lg) {
     &_content {
@@ -279,6 +291,7 @@ section {
 .about_us {
   background-color: $blue_gray;
   position: relative;
+  padding-top: 0;
 
   // @include min_media($lg) {
   &::before {
@@ -327,6 +340,14 @@ section {
 
   .container {
     .wrapper {
+      align-items: unset;
+
+      @include min_media($lg) {
+        .card {
+          margin-bottom: 0;
+        }
+      }
+
       .img-thumb {
         &::after {
           bottom: auto;
@@ -352,13 +373,13 @@ section {
   &_content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
 
     .card {
       padding: 1.5rem;
       background-color: $white;
-      box-shadow: 0 3px 30px rgb(9 9 12/ 10%);
+      // box-shadow: 0 3px 30px rgb(9 9 12/ 10%);
+      border: 1px solid $gray;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -618,6 +639,10 @@ $cardColors: (
   padding: 2rem 0;
   background-color: $primary_dark;
   color: rgb(255 255 255 / 80%);
+
+  @include min_media($lg) {
+    padding: 2.575rem 0;
+  }
 
   svg {
     .path {

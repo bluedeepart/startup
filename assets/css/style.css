@@ -1,19 +1,19 @@
 :root {
   --primary: #4c39f0;
-  --primary_logo: #08004A;
+  --primary_logo: #08004a;
   --secondary: #f5602d;
   --primary_light: #3524c4;
   --primary_dark: #040025;
   --primary_dark_2: #1b107a;
   --black: #000000;
   --white: #ffffff;
-  --gray: #f4f4fb;
+  --gray: #f4f4f4;
   --gray_2: #f4f4fb;
   --label_color: #454545;
   --border_color: #d4d5d9;
   --dark_gray: #262626;
   --light_gray: #404040;
-  --blue_gray: #f6f5ff;
+  --blue_gray: #f9f8ff;
   --light_purple: #eee9ff;
   --light_pink: #ffe9fc;
   --light_orange: #ffe8d8;
@@ -100,12 +100,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 991px) {
-  body {
-    padding-top: 80px;
-  }
-}
-
 h1 {
   font-size: 32px;
   line-height: 46px;
@@ -120,14 +114,12 @@ h1 {
   }
 }
 
-h2,
-h3 {
+h2 {
   font-size: 20px;
   line-height: 32px;
 }
 @media only screen and (min-width: 768px) {
-  h2,
-  h3 {
+  h2 {
     font-size: 32px;
     line-height: 39px;
   }
@@ -138,11 +130,18 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
-  line-height: 38.73px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
 }
 
 h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+h5 {
   font-weight: 300;
   font-size: 18px;
   line-height: 21.78px;
@@ -166,7 +165,7 @@ h2:not(:only-child, :last-child),
 h3:not(:only-child, :last-child),
 p:not(:only-child, :last-child),
 ul:not(:only-child, :last-child) {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 img {
@@ -376,6 +375,10 @@ img {
   color: #9fa2aa;
 }
 
+.iti {
+  display: block;
+}
+
 .input {
   border: 1px solid var(--border_color);
   background-color: var(--white);
@@ -458,7 +461,13 @@ img {
 
 .header {
   background-color: var(--white);
-  padding: 1rem 0;
+  padding: 1.55rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  -webkit-box-shadow: 0 4px 64px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 64px rgba(0, 0, 0, 0.05);
+  z-index: 9;
 }
 .header svg {
   display: block;
@@ -482,10 +491,18 @@ img {
   margin-bottom: 0;
 }
 .header_nav ul li a:not(.btn) {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
   color: inherit;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .header_nav ul li a:not(.btn):hover {
   color: var(--primary_light);
+}
+.header_nav ul li a:not(.btn).active {
+  color: var(--primary);
+  border-color: var(--primary);
 }
 @media only screen and (min-width: 992px) {
   .header_nav_logo {
@@ -606,7 +623,7 @@ img {
 
 /* BODY */
 section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 @media only screen and (min-width: 576px) {
   section {
@@ -616,16 +633,6 @@ section {
 @media only screen and (min-width: 768px) {
   section {
     padding: 6rem 0;
-  }
-}
-@media only screen and (min-width: 992px) {
-  section {
-    padding: 7rem 0;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  section {
-    padding: 8rem 0;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -648,10 +655,8 @@ section {
 }
 
 /* BANNER */
-@media only screen and (max-width: 767px) {
-  .banner {
-    padding-top: 3rem;
-  }
+.banner {
+  padding-top: 3rem;
 }
 @media only screen and (min-width: 992px) {
   .banner_content {
@@ -693,6 +698,7 @@ section {
 .about_us {
   background-color: var(--blue_gray);
   position: relative;
+  padding-top: 0;
 }
 .about_us::before {
   content: "";
@@ -730,6 +736,16 @@ section {
 .mission {
   padding-bottom: 0;
 }
+.mission .container .wrapper {
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+@media only screen and (min-width: 992px) {
+  .mission .container .wrapper .card {
+    margin-bottom: 0;
+  }
+}
 .mission .container .wrapper .img-thumb::after {
   bottom: auto;
   width: 93px;
@@ -752,16 +768,12 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 1rem;
 }
 .expertise_content .card {
   padding: 1.5rem;
   background-color: var(--white);
-  -webkit-box-shadow: 0 3px 30px rgba(9, 9, 12, 0.1);
-          box-shadow: 0 3px 30px rgba(9, 9, 12, 0.1);
+  border: 1px solid var(--gray);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1042,6 +1054,11 @@ section {
   padding: 2rem 0;
   background-color: var(--primary_dark);
   color: rgba(255, 255, 255, 0.8);
+}
+@media only screen and (min-width: 992px) {
+  .footer {
+    padding: 2.575rem 0;
+  }
 }
 .footer svg .path {
   fill: var(--white);

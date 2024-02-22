@@ -24,26 +24,22 @@
     <meta property="og:image" content="">
     <meta property="og:image:alt" content="http://kodeform.com"> -->
 
-    <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KodeForm">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:image:alt" content="http://kodeform.com"> -->
-
     <!-- FAVICON -->
-    <link rel="apple-touch-icon" href="/assests/images/favicons/favicon-16.png">
-    <link rel="icon" href="/assests/images/favicons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assests/images/favicons/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assests/images/favicons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="180x180" href="/assests/images/favicons/favicon-180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assests/images/favicons/favicon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assests/images/favicons/favicon-512.png">
+    <link rel="apple-touch-icon" href="/assets/images/favicons/favicon-16.png">
+    <link rel="icon" href="/assets/images/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="/assets/images/favicons/favicon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicons/favicon-512.png">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- International Telephone Input -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.20/build/css/intlTelInput.css">
 
     <!-- STYLE SHEET -->
     <link rel="stylesheet" href="assets/css/style.min.css" />
@@ -78,6 +74,7 @@
           <ul>
             <li><a href="#about_us">About Us</a></li>
             <li><a href="#our_mission">Our Mission</a></li>
+            <li><a href="#our_expertise">Our Expertise</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#newsletter">Newsletter</a></li>
             <li>
@@ -118,7 +115,7 @@
             <img src="assets/images/img-2.png" alt="image" />
           </div>
           <div class="about_us_content">
-            <h4>Who we are</h4>
+            <h5>Who we are</h5>
             <h2><span class="star">About Us</span></h2>
             <p>Welcome to KodeForm Technologies, where innovation meets efficiency. Founded by seasoned professionals with a passion for technology, we are a dynamic software service company dedicated to providing cutting-edge solutions tailored to meet the unique needs of our clients. With a team of passionate and experienced professionals, we are motivated to deliver excellence in every project we undertake. Our commitment to quality, creativity, and customer satisfaction sets us apart in the industry. At KodeForm, we are more than developers – we are committed to helping you achieve world-class digital transformation. Together, let's innovate. </p>
           </div>
@@ -128,38 +125,38 @@
 
     <section class="section mission" id="our_mission">
       <div class="container">
-        <h4>Our Mission &amp; Vision</h4>
+        <h5>Our Mission &amp; Vision</h5>
         <h2>
           <span class="star">To Craft Creative and Innovative Solutions</span>
         </h2>
         <div class="wrapper">
-          <div class="img-thumb">
+          <!-- <div class="img-thumb">
             <img src="assets/images/img-3.png" alt="image" />
             <div class="img-thumb-caption">
-              <h4>Our Goal</h4>
+              <h5>Our Goal</h5>
               <h2>To be the Best in the Industry</h2>
             </div>
+          </div> -->
+          <!-- <div class="mission_content"> -->
+          <div class="card">
+            <h5>Our Mission</h5>
+            <h4>Customer Success is our Mission</h4>
+            <p>At Kodeform, our mission is to empower businesses of all sizes through innovative software solutions that drive growth, streamline operations, and enhance productivity. We aim to be a trusted partner for our clients, helping them harness the power of technology to achieve their goals and stay ahead in today's competitive landscape.</p>
           </div>
-          <div class="mission_content">
-            <div class="card">
-              <h4>Our Mission</h4>
-              <h2>Customer Success is our Mission</h2>
-              <p>At Kodeform, our mission is to empower businesses of all sizes through innovative software solutions that drive growth, streamline operations, and enhance productivity. We aim to be a trusted partner for our clients, helping them harness the power of technology to achieve their goals and stay ahead in today's competitive landscape.</p>
-            </div>
-            <div class="card">
-              <h4>Our Vision</h4>
-              <h2>To help companies with Innovative solutions</h2>
-              <p>We envision a future where every business, regardless of size or industry, has access to the tools and expertise needed to thrive in the digital age. Through continuous innovation and a relentless pursuit of excellence, we strive to be a leading force in shaping the future of software services, driving positive change, and making a meaningful impact on the world.</p>
-            </div>
+          <div class="card">
+            <h5>Our Vision</h5>
+            <h4>To help companies with Innovative solutions</h4>
+            <p>We envision a future where every business, regardless of size or industry, has access to the tools and expertise needed to thrive in the digital age. Through continuous innovation and a relentless pursuit of excellence, we strive to be a leading force in shaping the future of software services, driving positive change, and making a meaningful impact on the world.</p>
           </div>
+          <!-- </div> -->
         </div>
       </div>
     </section>
 
-    <section class="section expertise">
+    <section class="section expertise" id="our_expertise">
       <div class="container">
         <div class="expertise_header">
-          <h4>Our Expertise</h4>
+          <h5>Our Expertise</h5>
           <h2><span class="star">What we are great at</span></h2>
         </div>
         <div class="expertise_content">
@@ -182,10 +179,10 @@
             <img src="assets/images/expertise/nodejs.png" alt="nodejs" />
           </div>
           <div class="card">
-            <img src="assets/images/expertise/photoshop.png" alt="photoshop" />
+            <img src="assets/images/expertise/java.png" alt="Java" />
           </div>
           <div class="card">
-            <img src="assets/images/expertise/js.png" alt="js" />
+            <img src="assets/images/expertise/microsoft_net.png" alt=">Net" />
           </div>
           <div class="card">
             <img src="assets/images/expertise/php.png" alt="php" />
@@ -209,7 +206,22 @@
             <img src="assets/images/expertise/android.png" alt="android" />
           </div>
           <div class="card">
-            <img src="assets/images/expertise/python.png" alt="python" />
+            <img src="assets/images/expertise/python.png" alt="Python" />
+          </div>
+          <div class="card">
+            <img src="assets/images/expertise/react.png" alt="React" />
+          </div>
+          <div class="card">
+            <img src="assets/images/expertise/azure.png" alt="Azure" />
+          </div>
+          <div class="card">
+            <img src="assets/images/expertise/google-cloud.png" alt="Google Cloud" />
+          </div>
+          <div class="card">
+            <img src="assets/images/expertise/ibm-cloud.png" alt="IBM Cloud" />
+          </div>
+          <div class="card">
+            <img src="assets/images/expertise/dep-ops.png" alt="Dev OPS" />
           </div>
         </div>
       </div>
@@ -218,7 +230,7 @@
     <section class="section services" id="services">
       <div class="container">
         <div class="services_header">
-          <h4>Our Services</h4>
+          <h5>Our Services</h5>
           <h2><span class="star">What we do best</span></h2>
         </div>
         <div class="services_content">
@@ -245,28 +257,28 @@
           </div>
           <div class="services_card">
             <div class="services_card_icon">
-              <img src="assets/images/chart/presentation-chart-1.png" alt="Testing" />
+              <img src="assets/images/chart/cloud-solutions.png" alt="Cloud Solutions" />
             </div>
             <h3>Cloud Solutions and Migration</h3>
             <p></p>
           </div>
           <div class="services_card">
             <div class="services_card_icon">
-              <img src="assets/images/chart/presentation-chart-2.png" alt="Lorem Ipsum" />
+              <img src="assets/images/chart/software-consulting-and-strategy.png" alt="Software Consulting and Strategy" />
             </div>
             <h3>Software Consulting and Strategy</h3>
             <p></p>
           </div>
           <div class="services_card">
             <div class="services_card_icon">
-              <img src="assets/images/chart/presentation-chart-3.png" alt="Lorem Ipsum" />
+              <img src="assets/images/chart/infra-maintenance-and-support.png" alt="Infra Maintenance and Support" />
             </div>
             <h3>Infra Maintenance and Support</h3>
             <p></p>
           </div>
           <div class="services_card" style="display: none">
             <div class="services_card_icon">
-              <img src="assets/images/chart/presentation-chart-3.png" alt="Lorem Ipsum" />
+              <img src="assets/images/chart/presentation-chart-3.png" alt="Quality Assurance and Testing" />
             </div>
             <h3>Quality Assurance and Testing</h3>
             <p></p>
@@ -302,7 +314,7 @@
         <div class="wrapper">
           <div class="contact_details img-thumb">
             <div>
-              <h4>Contact Us</h4>
+              <h5>Contact Us</h5>
               <h2><span class="star">Share your Project Details</span></h2>
               <p>
                 Please fill in your brief details and we will get in touch at
@@ -335,7 +347,7 @@
                 <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram" /></a>
               </li>
               <li>
-                <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter" /></a>
+                <a href="#"><img src="assets/images/icons/x_logo.png" alt="X" /></a>
               </li>
               <li>
                 <a href="#"><img src="assets/images/icons/linkedin.png" alt="linkedin" /></a>
@@ -419,7 +431,7 @@
               <a href="#"><img src="assets/images/icons/instagram.png" alt="instagram" /></a>
             </li>
             <li>
-              <a href="#"><img src="assets/images/icons/twitter.png" alt="twitter" /></a>
+              <a href="#"><img src="assets/images/icons/x_logo.png" alt="X" /></a>
             </li>
             <li>
               <a href="#"><img src="assets/images/icons/linkedin.png" alt="linkedin" /></a>
@@ -429,6 +441,7 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.20/build/js/intlTelInput.min.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 

@@ -24,8 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
       errorMessageElement.textContent = inputElement.validationMessage;
     } else if (inputElement.id === 'email_ID' && !validateEmail(inputElement.value)) {
       errorMessageElement.textContent = 'Please enter a valid email address.';
-    } else if (inputElement.id === 'phone' && !validatePhone(inputElement.value)) {
-      errorMessageElement.textContent = 'Please enter a valid 10-digit phone number.';
     } else {
       errorMessageElement.textContent = '';
     }
@@ -46,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // URL endpoint for your POST request
     const url = '/mail.php';
-    
+
     const formData = new FormData();
     formData.append('mail', 'mail');
     formData.append('name', document.getElementById('name').value);
@@ -54,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     formData.append('phone', document.getElementById('phone').value);
     formData.append('service', document.getElementById('service').value);
     formData.append('projectDetails', document.getElementById('project_details').value);
-    
+
     // Configuration for the fetch request
     const requestOptions = {
       method: 'POST',
@@ -126,4 +124,56 @@ window.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth',
     });
   }
+
+  /* TOP SPACING */
+  document.body.style.marginTop = `${header.clientHeight}px`;
+
+  /* HIGHLIGHT ACTIVE MENU */
+  const menuLinks = document.querySelectorAll('header a');
+  const sections = document.querySelectorAll('section');
+
+  window.addEventListener('scroll', () => {
+    let currentSectionId = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - header.offsetHeight;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+        currentSectionId = section.id;
+      }
+    });
+
+    menuLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      menuLinks.forEach((link) => {
+        link.classList.remove('active');
+      });
+      link.classList.add('active');
+
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      window.scrollTo({
+        top: targetSection.offsetTop - header.offsetHeight,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  /* International Telephone Input */
+  const input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.20/build/js/utils.js",
+    initialCountry: "in",
+    showSelectedDialCode: true,
+    isValidNumber: true,
+  });
+
 });

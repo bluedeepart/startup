@@ -1,19 +1,19 @@
 :root {
   --primary: #4c39f0;
-  --primary_logo: #08004A;
+  --primary_logo: #08004a;
   --secondary: #f5602d;
   --primary_light: #3524c4;
   --primary_dark: #040025;
   --primary_dark_2: #1b107a;
   --black: #000000;
   --white: #ffffff;
-  --gray: #f4f4fb;
+  --gray: #f4f4f4;
   --gray_2: #f4f4fb;
   --label_color: #454545;
   --border_color: #d4d5d9;
   --dark_gray: #262626;
   --light_gray: #404040;
-  --blue_gray: #f6f5ff;
+  --blue_gray: #f9f8ff;
 
   --light_purple: #eee9ff;
   --light_pink: #ffe9fc;
@@ -153,14 +153,8 @@ body {
   overflow-x: hidden;
 }
 
-html{
+html {
   scroll-behavior: smooth;
-}
-
-body{
-  @include max_media($lg){
-    padding-top: 80px;
-  }
 }
 
 h1 {
@@ -176,8 +170,7 @@ h1 {
   }
 }
 
-h2,
-h3 {
+h2 {
   font-size: 20px;
   line-height: 32px;
 
@@ -192,11 +185,18 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
-  line-height: 38.73px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
 }
 
 h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+h5 {
   font-weight: 300;
   font-size: 18px;
   line-height: 21.78px;
@@ -222,7 +222,7 @@ h3,
 p,
 ul {
   &:not(:only-child, :last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 
