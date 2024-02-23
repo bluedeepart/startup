@@ -176,4 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
     isValidNumber: true,
   });
 
+  const updatedText = document.querySelector('.updated-text');
+  const updatedTextSpan = updatedText.querySelector('p');
+  updatedText.style.height = updatedTextSpan.clientHeight + 'px';
 });

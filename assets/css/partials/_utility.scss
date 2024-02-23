@@ -25,9 +25,34 @@ $breakpoints: (
 
 @each $breakpoint, $breakpoint-value in $breakpoints {
   .container,
-  .header_nav ul{
+  .header_nav ul {
     @include min_media($breakpoint-value) {
       max-width: calc(#{$breakpoint-value} - ($gutter * 2));
     }
+  }
+}
+
+@keyframes bannerAnimation {
+  0%, 100%{
+    top: 0;
+  }
+  20% {
+    top: 0;
+  }
+  25%,50%{
+    top: -66px;
+  }
+  55%,
+  95%{
+    top: -132px;
+  }
+}
+
+@keyframes widthAnimation {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
   }
 }
