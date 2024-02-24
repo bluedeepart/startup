@@ -225,10 +225,10 @@ img {
     top: 0;
   }
   25%, 50% {
-    top: -66px;
+    top: -100%;
   }
   55%, 95% {
-    top: -132px;
+    top: -200%;
   }
 }
 
@@ -240,10 +240,10 @@ img {
     top: 0;
   }
   25%, 50% {
-    top: -66px;
+    top: -100%;
   }
   55%, 95% {
-    top: -132px;
+    top: -200%;
   }
 }
 @-webkit-keyframes widthAnimation {
