@@ -1,15 +1,14 @@
 /* HEADER */
 %headerMenu {
-  @include min_media($md) {
-    gap: 3rem;
-  }
-
   @include min_media($lg) {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-left: 0;
     padding-right: 0;
+  }
+  @include min_media($xl) {
+    gap: 1.5rem;
   }
 }
 
@@ -406,7 +405,7 @@ section {
     gap: 1rem;
 
     .card {
-      padding: 1.5rem;
+      padding: 1rem;
       background-color: $white;
       // box-shadow: 0 3px 30px rgb(9 9 12/ 10%);
       border: 1px solid $gray;
@@ -414,6 +413,10 @@ section {
       align-items: center;
       justify-content: center;
       margin-bottom: 0;
+
+      @include min_media($sm){
+        padding: 1.5rem;
+      }
 
       img {
         object-fit: contain;
