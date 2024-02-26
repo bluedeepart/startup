@@ -1,11 +1,18 @@
 /* HEADER */
 %headerMenu {
-  @include min_media($lg) {
+  @include min_media($md) {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.7rem;
     padding-left: 0;
     padding-right: 0;
+
+    @include max_media($lg) {
+      font-size: 0.9rem;
+    }
+  }
+  @include min_media($lg) {
+    gap: 1rem;
   }
   @include min_media($xl) {
     gap: 1.5rem;
@@ -40,7 +47,7 @@
         }
       }
     }
-    @include max_media($md) {
+    @include max_media($lg) {
       max-height: 20px;
       width: auto;
     }
@@ -88,12 +95,12 @@
     }
 
     &_logo {
-      @include min_media($lg) {
+      @include min_media($md) {
         display: none;
       }
     }
 
-    @include max_media($lg) {
+    @include max_media($md) {
       @include min_media($sm) {
         ul {
           li {
@@ -108,7 +115,7 @@
       gap: 1.25rem;
       align-items: center;
 
-      @include min_media($lg) {
+      @include min_media($md) {
         display: none;
       }
 
@@ -117,7 +124,7 @@
       }
     }
 
-    @include max_media($lg) {
+    @include max_media($md) {
       ul {
         li {
           padding: 1.25rem 0;
@@ -155,7 +162,7 @@
       }
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       display: none;
     }
   }
@@ -165,7 +172,7 @@
     flex: 1 1 auto;
   }
 
-  @include max_media($lg) {
+  @include max_media($md) {
     padding: 0;
     box-shadow: 0 4px 10px rgb(0 0 0 /5%);
 
@@ -211,7 +218,7 @@
   .container {
     overflow-y: auto;
     height: 100%;
-    @extend %min-lg-flex-between;
+    @extend %min-md-flex-between;
     flex: 1 1 auto;
 
     -ms-overflow-style: none;
@@ -242,7 +249,7 @@ section {
   }
 
   .wrapper {
-    @include min_media($lg) {
+    @include min_media($md) {
       display: flex;
       gap: 2rem;
       align-items: center;
@@ -259,7 +266,7 @@ section {
 .banner {
   padding-top: 3rem;
 
-  @include min_media($lg) {
+  @include min_media($md) {
     &_content {
       max-width: 30rem;
     }
@@ -271,6 +278,17 @@ section {
     margin-right: auto;
 
     h1 {
+      &.star {
+        &::before {
+          @include min_media($md) {
+            top: 90%;
+          }
+          @include max_media($md) {
+            display: none;
+          }
+        }
+      }
+
       .updated-text {
         display: inline-block;
         vertical-align: top;
@@ -322,7 +340,7 @@ section {
   position: relative;
   padding-top: 0;
 
-  // @include min_media($lg) {
+  // @include min_media($md) {
   &::before {
     content: "";
     position: absolute;
@@ -340,7 +358,7 @@ section {
       &_content {
         margin-top: 4rem;
 
-        @include min_media($lg) {
+        @include min_media($md) {
           padding-left: 8rem;
           margin-bottom: 0;
         }
@@ -371,7 +389,7 @@ section {
     .wrapper {
       align-items: unset;
 
-      @include min_media($lg) {
+      @include min_media($md) {
         .card {
           margin-bottom: 0;
         }
@@ -400,9 +418,20 @@ section {
   }
 
   &_content {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 1rem;
+    display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include min_media($md) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include min_media($xl) {
+      grid-template-columns: repeat(8, 1fr);
+    }
 
     .card {
       padding: 1rem;
@@ -414,7 +443,7 @@ section {
       justify-content: center;
       margin-bottom: 0;
 
-      @include min_media($sm){
+      @include min_media($sm) {
         padding: 1.5rem;
       }
 
@@ -423,7 +452,7 @@ section {
         width: 35px;
         height: 35px;
 
-        @include min_media($md) {
+        @include min_media($sm) {
           width: 75px;
           height: 75px;
         }
@@ -501,11 +530,11 @@ $cardColors: (
       }
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       flex: 1 0 30%;
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       padding: 2rem;
     }
 
@@ -607,7 +636,7 @@ $cardColors: (
       margin-top: 3rem;
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       padding: 3rem;
 
       .social-icons {
@@ -615,7 +644,7 @@ $cardColors: (
       }
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       padding: 3rem;
 
       .social-icons {
@@ -653,14 +682,14 @@ $cardColors: (
   &_form {
     padding: 2rem;
 
-    @include min_media($lg) {
+    @include min_media($md) {
       padding: 3rem;
     }
 
     .btn {
       width: 100%;
 
-      @include min_media($lg) {
+      @include min_media($md) {
         width: auto;
       }
     }
@@ -673,7 +702,7 @@ $cardColors: (
   background-color: $primary_dark;
   color: rgb(255 255 255 / 80%);
 
-  @include min_media($lg) {
+  @include min_media($md) {
     padding: 2.575rem 0;
   }
 
@@ -692,8 +721,8 @@ $cardColors: (
   }
 
   .wrapper {
-    @include min_media($lg) {
-      @extend %min-lg-flex-between;
+    @include min_media($md) {
+      @extend %min-md-flex-between;
     }
 
     & > * {
@@ -702,13 +731,13 @@ $cardColors: (
 
     & > div {
       &:not(:last-child) {
-        @include max_media($lg) {
+        @include max_media($md) {
           margin-bottom: 2rem;
         }
       }
     }
 
-    @include min_media($lg) {
+    @include min_media($md) {
       div:nth-child(2) {
         text-align: center;
       }
@@ -745,7 +774,7 @@ $cardColors: (
     background-color: $primary;
   }
 
-  @include max_media($lg) {
+  @include max_media($md) {
     bottom: 4rem;
     right: 1rem;
   }

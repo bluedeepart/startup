@@ -106,15 +106,15 @@ $sm: 576px;
   align-items: center;
 }
 
-@include min_media($lg) {
-  %min-lg-flex-center {
+@include min_media($md) {
+  %min-md-flex-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
 
-  %min-lg-flex-between {
+  %min-md-flex-between {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -122,15 +122,15 @@ $sm: 576px;
   }
 }
 
-@include max_media($lg) {
-  %max-lg-flex-center {
+@include max_media($md) {
+  %max-md-flex-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
 
-  %max-lg-flex-between {
+  %max-md-flex-between {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -164,7 +164,7 @@ h1 {
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
 
-  @include min_media($lg) {
+  @include min_media($md) {
     line-height: 4.125rem;
     font-size: 3rem;
   }

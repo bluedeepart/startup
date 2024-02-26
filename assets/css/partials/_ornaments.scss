@@ -1,6 +1,6 @@
 %random_shapes {
   position: relative;
-  @include min_media($lg) {
+  @include min_media($md) {
     &::before,
     &::after {
       content: "";
@@ -14,7 +14,7 @@
 .banner {
   @extend %random_shapes;
 
-  @include min_media($lg) {
+  @include min_media($md) {
     &::before,
     &::after {
       z-index: 2;
@@ -42,7 +42,7 @@
 .about_us {
   @extend %random_shapes;
 
-  @include min_media($lg) {
+  @include min_media($md) {
     &::after {
       background-image: url("../../assets/images/ornament-18.png");
       left: 44%;
@@ -69,7 +69,7 @@
 
 .services {
   @extend %random_shapes;
-  @include min_media($lg) {
+  @include min_media($md) {
     &::before {
       right: 50%;
       top: 50%;
@@ -83,7 +83,7 @@
 
   .container {
     @extend %random_shapes;
-    @include min_media($lg) {
+    @include min_media($md) {
       &::before,
       &::after {
         z-index: 2;
@@ -112,7 +112,7 @@
 .contact {
   @extend %random_shapes;
 
-  @include min_media($lg) {
+  @include min_media($md) {
     &::before,
     &::after {
       z-index: 2;

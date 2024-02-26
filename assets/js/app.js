@@ -126,7 +126,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   /* TOP SPACING */
-  document.body.style.marginTop = `${header.clientHeight}px`;
+  window.addEventListener('load', () => {
+    document.body.style.marginTop = `${header.clientHeight}px`;
+  });
+  window.addEventListener('resize', () => {
+    document.body.style.marginTop = `${header.clientHeight}px`;
+  });
 
   /* HIGHLIGHT ACTIVE MENU */
   const menuLinks = document.querySelectorAll('header a');

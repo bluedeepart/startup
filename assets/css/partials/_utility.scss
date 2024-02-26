@@ -1,10 +1,10 @@
-$breakpoints: (
-  sm: $sm,
-  md: $md,
-  lg: $lg,
-  xl: $xl,
-  // xxl: $xxl
-);
+// $breakpoints: (
+//   sm: $sm,
+//   md: $md,
+//   lg: $lg,
+//   xl: $xl,
+//   // xxl: $xxl
+// );
 
 .container,
 .header_nav ul {
@@ -13,9 +13,10 @@ $breakpoints: (
   margin-right: auto;
   padding-left: $gutter;
   padding-right: $gutter;
+  max-width: 1200px;
 
   .wrapper {
-    @include max_media($lg) {
+    @include max_media($md) {
       & > div:not(:last-child) {
         margin-bottom: 3rem;
       }
@@ -23,14 +24,14 @@ $breakpoints: (
   }
 }
 
-@each $breakpoint, $breakpoint-value in $breakpoints {
-  .container,
-  .header_nav ul {
-    @include min_media($breakpoint-value) {
-      max-width: calc(#{$breakpoint-value} - ($gutter * 2));
-    }
-  }
-}
+// @each $breakpoint, $breakpoint-value in $breakpoints {
+//   .container,
+//   .header_nav ul {
+//     @include min_media($breakpoint-value) {
+//       max-width: calc(#{$breakpoint-value} - ($gutter * 2));
+//     }
+//   }
+// }
 
 @keyframes bannerAnimation {
   0%, 100%{
